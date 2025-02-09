@@ -102,6 +102,9 @@ beach_locations = {
 }
 
 
+@app.route("/")
+def home():
+    return "Flask API is running!"
 
 @app.route('/beach_ecoli_data', methods=['GET'])
 def get_beach_data():
