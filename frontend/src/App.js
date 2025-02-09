@@ -7,7 +7,8 @@ function App() {
 
   //get beach data
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/beach_ecoli_data")
+    fetch("https://vancouver-beaches-ecoli-tracker.onrender.com/beach_ecoli_data")
+    //fetch("http://127.0.0.1:5000/beach_ecoli_data")
       .then((res) => res.json())
       .then((data) => {
         console.log("API Response:", data);  // Debugging log
