@@ -1,3 +1,5 @@
 flask
 flask-cors
 gunicorn  # Required for hosting
+requests
+beautifulsoup4
