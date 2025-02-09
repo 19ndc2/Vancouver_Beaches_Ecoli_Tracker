@@ -3,3 +3,5 @@ flask-cors
 gunicorn  # Required for hosting
 requests
 beautifulsoup4
+tabulate
+pdfplumber
