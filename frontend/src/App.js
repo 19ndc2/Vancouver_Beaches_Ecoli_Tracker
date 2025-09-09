@@ -39,7 +39,15 @@ function App() {
 
         {/*Show loading spinner while waiting for backend response */}
         {loading ? (
-          <LoadingSpinner />    
+          <div>
+            <LoadingSpinner />
+            <p>
+              This demo runs on a free server, which sleeps when idle.
+              </p>
+              <p>
+              The first load may take up to 1–2 minutes while the backend wakes up.              
+              </p>
+          </div>
         ) : (
           
           <>
