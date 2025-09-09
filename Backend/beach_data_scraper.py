@@ -19,7 +19,7 @@ def scrapeData():
             tables = page.extract_tables() #get all tables on page
             for table in tables: #loop through tables
                 for row in table: #loop through rows
-                    if (row[0] != "Geometric Mean\nArea Beach (Ecoli MPN/100mL) Calculated On"): #remove Geometric Mean rows
+                    if row and row[1] and row[2] and row[3]: #removed table headers
 
                         #add beach data to master list
                         beach_data.append({
@@ -27,7 +27,10 @@ def scrapeData():
                             "ecoli_level": row[2].strip(),
                             "sample_date": row[3].strip()
                         })
+                    else: 
+                        print("Skipping row:", row)
+
 
     return beach_data
-
-#print(tabulate(beach_data, headers="keys", tablefmt="grid"))
+    #print(tabulate(beach_data, headers="keys", tablefmt="grid"))
+#scrapeData()
