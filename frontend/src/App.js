@@ -3,6 +3,12 @@ import './App.css';
 import MapComponent from "./MapComponent";
 import LoadingSpinner from "./LoadingSpinner";
 
+
+const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+const targetUrl = "https://crusted-laura-unjudging.ngrok-free.dev/beaches/beach_ecoli_data";
+
+
+
 function App() {
   const [beaches, setBeaches] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,14 +16,17 @@ function App() {
   //get beach data
   useEffect(() => {
     setLoading(true); //start loading
-    fetch("https://vancouver-beaches-ecoli-tracker.onrender.com/beach_ecoli_data")
-    //fetch("http://127.0.0.1:5000/beach_ecoli_data")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("API Response:", data);  // Debugging log
-        setBeaches(data);  
+    console.log("making fetch")
 
-      })
+    fetch("https://crusted-laura-unjudging.ngrok-free.dev/beaches/beach_ecoli_data",{headers: {"ngrok-skip-browser-warning": "true"}}) //use ngrok link pointing to local server
+       .then((res) => res.json())
+       .then((data) => {
+         console.log("API Response:", data);  // Debugging log
+         setBeaches(data);  
+       })
+
+      //.then(res => res.text())       // get raw body as text
+      //.then(text => console.log("Raw response body:", text))
       .catch((error) => console.error("Error fetching data:", error))
       .finally(() => {
         setLoading(false); //stop loading
