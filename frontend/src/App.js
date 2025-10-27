@@ -4,10 +4,6 @@ import MapComponent from "./MapComponent";
 import LoadingSpinner from "./LoadingSpinner";
 
 
-const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-const targetUrl = "https://crusted-laura-unjudging.ngrok-free.dev/beaches/beach_ecoli_data";
-
-
 
 function App() {
   const [beaches, setBeaches] = useState([]);
@@ -51,10 +47,9 @@ function App() {
           <div>
             <LoadingSpinner />
             <p>
-              This demo runs on a free server, which sleeps when idle.
               </p>
               <p>
-              The first load may take up to 1–2 minutes while the backend wakes up.              
+              This load may take a few seconds             
               </p>
           </div>
         ) : (
