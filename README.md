@@ -2,10 +2,6 @@
 
 This web app provides real-time updates on E. coli levels at Vancouver beaches. It helps users determine which beaches are safe for swimming using a color-coded table and an interactive map.
 
-## 🌐 Live Demo
-**FrontEnd (React UI):** (https://19ndc2.github.io/Vancouver_Beaches_Ecoli_Tracker)  
-**Backend (Flask API):** (https://vancouver-beaches-ecoli-tracker.onrender.com/beach_ecoli_data)
-
 ## Features
 - 📊 **E. coli Data Table** - View color-coded water quality levels.
 - 🗺️ **Interactive Map** - See beach locations and their status.
